@@ -9,5 +9,7 @@ public class Student {
         System.out.println("Student Name: " + name);
         System.out.println("Age: " + age);
         System.out.println("Course: " + course);
+        System.out.println("Welcome to the Student Management System!");
+        System.out.println("This is a simple Java program to demonstrate basic syntax and structure.");
     }
 }
