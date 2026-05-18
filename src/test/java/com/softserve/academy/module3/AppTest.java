@@ -1,4 +1,4 @@
-package com.softserve.academy;
+package com.softserve.academy.module3;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
