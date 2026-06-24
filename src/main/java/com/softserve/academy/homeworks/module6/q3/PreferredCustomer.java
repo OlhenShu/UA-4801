@@ -6,14 +6,14 @@ public class PreferredCustomer extends Customer {
     public PreferredCustomer(String name, String email, int maxPurchases, double discountRate) {
         super(name, email, maxPurchases);
         if (discountRate < 0 || discountRate > 100) {
-            System.out.println("Discount rate must be between 0 and 100 %. We're setting it to 10%");
+            System.out.println("Discount rate must be between 0% and 100%. Setting it to 10%");
             discountRate = 10;
         }
         this.discountRate = discountRate;
     }
 
     public int applyDiscount(int amount) {
-        return (int) (amount - (discountRate * amount / 100));
+        return (int) Math.round(amount - (discountRate * amount / 100.0));
     }
 
     public double getDiscountRate() {

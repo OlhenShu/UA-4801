@@ -7,8 +7,8 @@ public class Customer {
     protected int purchaseCount;
 
     public Customer(String name, String email, int maxPurchases) {
-        if (maxPurchases <= 0){
-            System.out.println("Max Purchases can not be equal or less than 0. We're setting it to 10");
+        if (maxPurchases <= 0) {
+            System.out.println("maxPurchases must be greater than 0. Setting it to 10.");
             maxPurchases = 10;
         }
         this.name = name;

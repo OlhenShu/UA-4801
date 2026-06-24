@@ -2,11 +2,11 @@ package com.softserve.academy.homeworks.module6.task1;
 
 public abstract class Bird {
     private String feathers;
-    private String layEggs;
+    private String eggLayingPlace;
 
-    public Bird(String feathers, String layEggs) {
+    public Bird(String feathers, String eggLayingPlace) {
         this.feathers = feathers;
-        this.layEggs = layEggs;
+        this.eggLayingPlace = eggLayingPlace;
     }
 
     public abstract void fly();
@@ -15,7 +15,7 @@ public abstract class Bird {
         return feathers;
     }
 
-    public String isLayEggs() {
-        return layEggs;
+    public String getEggLayingPlace() {
+        return eggLayingPlace;
     }
 }

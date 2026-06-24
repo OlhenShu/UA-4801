@@ -2,8 +2,8 @@ package com.softserve.academy.homeworks.module6.task1;
 
 public class FlyingBird extends Bird {
 
-    public FlyingBird(String feathers, String layEggs) {
-        super(feathers, layEggs);
+    public FlyingBird(String feathers, String eggLayingPlace) {
+        super(feathers, eggLayingPlace);
     }
 
     @Override

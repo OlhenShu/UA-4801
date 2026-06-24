@@ -9,7 +9,7 @@ package com.softserve.academy.homeworks.module6.q1;
  * to implement their own custom information display logic.
  * </p>
  */
-abstract class Device {
+public abstract class Device {
     protected String brand;
     protected String model;
     protected boolean powerStatus;
