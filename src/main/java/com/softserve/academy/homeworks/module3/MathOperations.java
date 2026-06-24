@@ -10,13 +10,13 @@ public class MathOperations {
         return number * number;
     }
 
-    public static double calculateCub(double number) {
+    public static double calculateCube(double number) {
         return number * number * number;
     }
 
     public static void main(String[] args) {
         System.out.println(calculateSquareRoot(9));
         System.out.println(calculateSquare(3));
-        System.out.println(calculateCub(3));
+        System.out.println(calculateCube(3));
     }
 }

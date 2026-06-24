@@ -1,10 +1,11 @@
 package com.softserve.academy.homeworks.module3;
 
 import java.time.LocalDate;
-
-import static com.softserve.academy.homeworks.module3.TestingMethods.SCANNER;
+import java.util.Scanner;
 
 public class Person {
+    public static final Scanner SCANNER = new Scanner(System.in);
+    private static final int OLDEST_YEAR = 150;
     private String firstName;
     private String lastName;
     private int birthYear;
@@ -14,12 +15,14 @@ public class Person {
     }
 
     public Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        setFirstName(firstName);
+        setLastName(lastName);
     }
 
-    public int getAge() {
-        //todo: add verification if birthYear not 0
+    public int getAge() throws Exception {
+        if (birthYear == 0) {
+            throw new Exception("Birth Year was not set");
+        }
         return LocalDate.now().getYear() - birthYear;
     }
 
@@ -40,12 +43,16 @@ public class Person {
         System.out.println("First name: " + getFirstName());
         System.out.println("Last name: " + getLastName());
         System.out.println("Year of birth: " + getBirthYear());
-        System.out.println("Age: " + getAge());
+        try {
+            System.out.println("Age: " + getAge());
+        }catch (Exception e){
+            System.out.println("Age was not set for this person.");
+        }
     }
 
     public void changeName(String fn, String ln) {
-        firstName = fn;
-        lastName = ln; //todo: add verification if it's null
+        setFirstName(fn);
+        setLastName(ln);
     }
 
     public String getFirstName() {
@@ -53,6 +60,9 @@ public class Person {
     }
 
     public void setFirstName(String firstName) {
+        if (firstName == null || firstName.isBlank()){
+            throw new IllegalArgumentException("First Name cannot be null");
+        }
         this.firstName = firstName;
     }
 
@@ -61,6 +71,9 @@ public class Person {
     }
 
     public void setLastName(String lastName) {
+        if (lastName == null || lastName.isBlank()){
+            throw new IllegalArgumentException("Last Name cannot be null");
+        }
         this.lastName = lastName;
     }
 
@@ -69,6 +82,10 @@ public class Person {
     }
 
     public void setBirthYear(int birthYear) {
+        if (birthYear <= LocalDate.now().getYear() - OLDEST_YEAR || birthYear > LocalDate.now().getYear()) {
+            throw new IllegalArgumentException("Birth year cannot be before " +
+                    (LocalDate.now().getYear() - OLDEST_YEAR) + " or in the future");
+        }
         this.birthYear = birthYear;
     }
 

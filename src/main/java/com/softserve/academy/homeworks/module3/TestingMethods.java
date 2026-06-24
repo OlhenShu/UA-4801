@@ -1,11 +1,8 @@
 package com.softserve.academy.homeworks.module3;
 
 import java.util.Locale;
-import java.util.Scanner;
 
 public class TestingMethods {
-    public static final Scanner SCANNER = new Scanner(System.in);
-
     public static void main(String[] args) {
         Locale.setDefault(Locale.ROOT);
 
@@ -23,6 +20,5 @@ public class TestingMethods {
         p3.output();
         p4.output();
         p5.output();
-        SCANNER.close();
     }
 }

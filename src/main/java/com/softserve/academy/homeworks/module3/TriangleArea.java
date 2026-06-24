@@ -13,11 +13,10 @@ public class TriangleArea {
      */
     public static double triangleArea(double side1, double side2, double side3) {
         double semiPerimeter = (side1 + side2 + side3) / 2;
-        double triangleArea = Math.sqrt(
+        return Math.sqrt(
                 semiPerimeter * (semiPerimeter - side1) *
                         (semiPerimeter - side2) * (semiPerimeter - side3)
         );
-        return triangleArea;
     }
 
     /**
@@ -30,10 +29,13 @@ public class TriangleArea {
      * @param side3 the length of the third side
      * @return true if the sides can form a valid triangle; false otherwise
      */
-    public static boolean isTriangleExists(double side1, double side2, double side3){
+    public static boolean isTriangleExists(double side1, double side2, double side3) {
+        if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+            return false;
+        }
         double longestSide = Math.max(side1, Math.max(side2, side3));
         double sumOfSmallerSides = side1 + side2 + side3 - longestSide;
-        return true; //placeholder
+        return longestSide < sumOfSmallerSides;
     }
 
     public static void main(String[] args) {
@@ -44,8 +46,13 @@ public class TriangleArea {
         double side2 = scanner.nextDouble();
         System.out.println("Please enter Side 3");
         double side3 = scanner.nextDouble();
-        //todo: add check if triangle exists
-        System.out.println(triangleArea(side1, side2, side3));
+        if (isTriangleExists(side1, side2, side3)) {
+            System.out.println(triangleArea(side1, side2, side3));
+        } else {
+            System.out.println("Triangle with sides " + side1 +
+                    ", " + side2 + ", " + side3 + " doesn't exist.");
+        }
+
         scanner.close();
     }
 }

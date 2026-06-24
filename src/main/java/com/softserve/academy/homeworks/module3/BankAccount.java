@@ -3,7 +3,6 @@ package com.softserve.academy.homeworks.module3;
 public class BankAccount {
     private String accountNumber;
     private double balance;
-    public int i=1;
 
     public BankAccount(String accountNumber, double balance) {
         this.balance = balance;
@@ -27,16 +26,19 @@ public class BankAccount {
     }
 
     public void deposit(double depositAmount) {
-        balance = balance + depositAmount;
+        if (depositAmount <= 0) {
+            throw new IllegalArgumentException("Deposit amount cannot be less or equal to 0");
+        }
+        balance += depositAmount;
     }
 
     public void withdraw(double withdrawalAmount) {
-        if (balance >= withdrawalAmount){
-            balance = balance - withdrawalAmount;
+        if (withdrawalAmount <= 0) {
+            throw new IllegalArgumentException("Withdrawal amount cannot be less or equal to 0");
         }
-    }
-
-    private static double newMethod(){
-        return 65.6;
+        if (withdrawalAmount < balance) {
+            throw new RuntimeException("Not enough funds to withdraw");
+        }
+        balance -= withdrawalAmount;
     }
 }

@@ -1,7 +1,5 @@
 package com.softserve.academy.homeworks.module3.kata;
 
-import java.util.Objects;
-
 public class Kata {
     public static String declareWinner(Fighter fighter1, Fighter fighter2, String firstAttacker) {
         boolean thereIsWinner = false;
@@ -14,7 +12,7 @@ public class Kata {
         }else{
             attacker = fighter2;
             notAttacker = fighter1;
-        };
+        }
         while(!thereIsWinner){
             notAttacker.health = notAttacker.health - attacker.damagePerAttack;
             if (notAttacker.health <= 0){
