@@ -1,0 +1,7 @@
+package com.softserve.academy.homeworks.module6.task1;
+
+public class Swallow extends FlyingBird {
+    public Swallow(String feathers, String eggLayingPlace) {
+        super(feathers, eggLayingPlace);
+    }
+}
