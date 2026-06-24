@@ -3,7 +3,7 @@ package com.softserve.academy.homeworks.module4.homework;
 import java.util.Scanner;
 
 public class MaxAndMinValues {
-    public static Scanner SCANNER = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     /**
      * Prompts the user for three integers, validates that they are unique, and

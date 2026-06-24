@@ -3,7 +3,7 @@ package com.softserve.academy.homeworks.module4;
 public class YearDaysCalculator {
     public static int calculateDaysInYear(int year) {
         if (year <= 0) {
-            throw new IllegalArgumentException("Year must be more than 0");
+            throw new IllegalArgumentException("Year must be greater than 0");
         } else if (year % 400 == 0) {
             return 366;
         } else if (year % 100 == 0) {

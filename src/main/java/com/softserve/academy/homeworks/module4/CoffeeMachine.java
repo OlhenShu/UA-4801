@@ -1,7 +1,7 @@
 package com.softserve.academy.homeworks.module4;
 
 public class CoffeeMachine {
-    enum CoffeeType {
+    public enum CoffeeType {
         ESPRESSO, AMERICANO, CAPPUCCINO, LATTE
     }
 

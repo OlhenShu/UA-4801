@@ -21,7 +21,7 @@ public class ErrorHandling {
     }
 
     public static void matchTheErrorCode() {
-        System.out.println("Please enter code client error code");
+        System.out.println("Please enter a client error (4xx) code:");
         int errorCode = SCANNER.nextInt();
         if (errorCode / 100 != 4) {
             System.out.println("This is not client error code.");
