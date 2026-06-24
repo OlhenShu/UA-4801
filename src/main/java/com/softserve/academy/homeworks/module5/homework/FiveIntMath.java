@@ -52,11 +52,11 @@ public class FiveIntMath {
                 break;
             }
         }
-        if (count > 0) {
+        if (count == 2) {
             System.out.println("Position of second positive number is " + position);
             return position;
         } else {
-            System.out.println("There are no 2 positive numbers in array");
+            System.out.println("There are fewer than 2 positive numbers in array");
             return -1;
         }
     }
@@ -112,7 +112,7 @@ public class FiveIntMath {
     public static void main(String[] args) {
         int[] numbersFromUser = getIntValuesFromUser();
         System.out.println(Arrays.toString(numbersFromUser));
-        int position = positionOfSecondPositiveNumber(numbersFromUser);
+        positionOfSecondPositiveNumber(numbersFromUser);
         minValueAndItsPosition(numbersFromUser);
         productOfEvenNumbers(numbersFromUser);
         SCANNER.close();

@@ -5,7 +5,7 @@ package com.softserve.academy.homeworks.module5.homework.carsTask;
  * structural type, manufacturing timeline, and mechanical specifications.
  * <p>
  * This class follows standard encapsulation principles by keeping its fields
- * private, preparing it for getter and setter methods.
+ * private and provides getter and setter methods.
  * </p>
  */
 public class Car {

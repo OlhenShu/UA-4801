@@ -29,7 +29,7 @@ public class RandomNumberGame {
                 System.out.println("Too high, try again.");
             }
             if (numberFromUser < numberToGuess) {
-                System.out.println("Too low, try againl.");
+                System.out.println("Too low, try again.");
             }
         } while (numberFromUser != numberToGuess);
         System.out.println("Correct, my number was " + numberToGuess + ". Congratulations!");

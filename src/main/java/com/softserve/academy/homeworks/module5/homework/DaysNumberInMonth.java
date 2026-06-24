@@ -24,9 +24,10 @@ public class DaysNumberInMonth {
         int count = 0;
         do {
             if (count >= 10) {
-                System.out.println("You're really stubborn as you've entered wrong month number 10 times.");
-                System.out.println("Next time try to enter number form 1 to 12.");
-                System.out.println("See you");
+                System.out.println("You've entered an invalid month number 10 times.");
+                System.out.println("Please enter a number from 1 to 12 next time.");
+                System.out.println("Exiting.");
+                monthNumber = 0;
                 break;
             }
             System.out.println("Please enter the number of a month");

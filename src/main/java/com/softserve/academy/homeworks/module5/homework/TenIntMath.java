@@ -37,7 +37,7 @@ public class TenIntMath {
      * </p>
      *
      * @param numbers the array of integers to evaluate (expected length matching ARRAY_LENGTH, which is 10)
-     * @return the sum of the first half if all are positive, or the product of the second half if any are negative
+     * @return the sum of the first half if all are non-negative, or the product of the second half if any are negative
      */
     public static int mathForTenNumbers(int[] numbers) {
         if (numbers.length != ARRAY_LENGTH) {
@@ -71,7 +71,7 @@ public class TenIntMath {
     public static void main(String[] args) {
         int[] numbersFromUser = getIntValuesFromUser();
         System.out.println(Arrays.toString(numbersFromUser));
-        int mathResult = mathForTenNumbers(numbersFromUser);
+        mathForTenNumbers(numbersFromUser);
         SCANNER.close();
     }
 }
