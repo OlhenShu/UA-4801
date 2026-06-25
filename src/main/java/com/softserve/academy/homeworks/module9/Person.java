@@ -13,8 +13,8 @@ public abstract class Person implements Cloneable {
     private int age;
 
     public Person(FullName fullName, int age) {
-        this.fullName = fullName;
-        this.age = age;
+        setFullName(fullName);
+        setAge(age);
     }
 
     public FullName getFullName() {
@@ -22,6 +22,9 @@ public abstract class Person implements Cloneable {
     }
 
     public void setFullName(FullName fullName) {
+        if (fullName == null) {
+            throw new IllegalArgumentException("Full Name cannot be null.");
+        }
         this.fullName = fullName;
     }
 
@@ -30,6 +33,9 @@ public abstract class Person implements Cloneable {
     }
 
     public void setAge(int age) {
+        if (age <= 0 || age > 150) {
+            throw new IllegalArgumentException("Age cannot be less than 0 or greater than 150");
+        }
         this.age = age;
     }
 
@@ -81,15 +87,21 @@ public abstract class Person implements Cloneable {
         private String lastName;
 
         public FullName(String firstName, String lastName) {
-            this.firstName = firstName;
-            this.lastName = lastName;
+            setFirstName(firstName);
+            setLastName(lastName);
         }
 
         public void setFirstName(String firstName) {
+            if (firstName == null) {
+                throw new IllegalArgumentException("First name cannot be null.");
+            }
             this.firstName = firstName;
         }
 
         public void setLastName(String lastName) {
+            if (lastName == null) {
+                throw new IllegalArgumentException("Last name cannot be null.");
+            }
             this.lastName = lastName;
         }
 
