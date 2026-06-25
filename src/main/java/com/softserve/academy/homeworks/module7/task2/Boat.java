@@ -15,7 +15,7 @@ public class Boat extends WaterVehicle {
     }
 
     @Override
-    void isSailing() {
-        System.out.println("This Boat is sailing");
+    void sail() {
+        System.out.println("This Boat is sailing.");
     }
 }

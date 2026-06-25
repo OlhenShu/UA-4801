@@ -9,7 +9,7 @@ package com.softserve.academy.homeworks.module7.task1;
  * (descending order).
  * </p>
  */
-public abstract class Employee implements Payment, Comparable<Payment> {
+public abstract class Employee implements Payment, Comparable<Employee> {
     private String name;
     private String employeeId;
 
@@ -23,19 +23,19 @@ public abstract class Employee implements Payment, Comparable<Payment> {
     }
 
     /**
-     * Compares this employee against another Payment object based on earnings.
+     * Compares this employee against another Employee object based on earnings.
      * <p>
      * Note: The comparison parameters are inverted internally to naturally
      * achieve a descending sort order (highest earnings bubble to the top).
      * </p>
      *
-     * @param payment the other Payment entity to compare against
+     * @param employee the other Employee entity to compare against
      * @return a negative integer, zero, or a positive integer as this employee's
      * pay is greater than, equal to, or less than the specified payment
      */
     @Override
-    public int compareTo(Payment payment) {
-        return Double.compare(payment.calculatePay(), this.calculatePay());
+    public int compareTo(Employee employee) {
+        return Double.compare(employee.calculatePay(), this.calculatePay());
     }
 
     public void setEmployeeId(String employeeId) {

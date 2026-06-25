@@ -11,6 +11,6 @@ public class RegularCustomerDiscount implements DiscountPolicy {
 
     @Override
     public boolean isApplicable(CustomerType type) {
-        return type.equals(CustomerType.REGULAR);
+        return type == CustomerType.REGULAR;
     }
 }

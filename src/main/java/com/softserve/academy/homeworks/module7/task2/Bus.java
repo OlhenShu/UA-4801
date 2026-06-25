@@ -16,6 +16,6 @@ public class Bus extends GroundVehicle {
 
     @Override
     void drive() {
-        System.out.println("The Bus is on it's way.");
+        System.out.println("The Bus is on its way.");
     }
 }

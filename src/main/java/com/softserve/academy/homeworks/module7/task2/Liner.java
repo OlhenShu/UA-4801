@@ -7,7 +7,7 @@ public class Liner extends WaterVehicle {
     }
 
     @Override
-    void isSailing() {
+    void sail() {
         System.out.println("The Liner is sailing.");
     }
 

@@ -11,6 +11,6 @@ public class VipCustomerDiscount implements DiscountPolicy {
 
     @Override
     public boolean isApplicable(CustomerType type) {
-        return type.equals(CustomerType.VIP);
+        return type == CustomerType.VIP;
     }
 }
