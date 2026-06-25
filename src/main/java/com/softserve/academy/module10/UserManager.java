@@ -13,7 +13,12 @@ public class UserManager {
         this.users = new ArrayList<>();
     }
 
-    // Create
+    /**
+     * Create a new user and add it to the list.
+     *
+     * @param user
+     * @return
+     */
     public boolean addUser(User user) {
         if (user != null) {
             // Check for duplicate ID
@@ -28,12 +33,21 @@ public class UserManager {
         return false;
     }
 
-    // Read (All)
+    /**
+     * Retrieve all users in the list.
+     *
+     * @return
+     */
     public List<User> getAllUsers() {
         return new ArrayList<>(users); // Return a copy of the list
     }
 
-    // Read (One by ID)
+    /**
+     * Retrieve a user by their ID.
+     *
+     * @param id
+     * @return
+     */
     public User getUserById(int id) {
         for (User user : users) {
             if (user.getId() == id) {
@@ -43,7 +57,14 @@ public class UserManager {
         return null;
     }
 
-    // Update
+    /**
+     * Update a user's name and email by their ID.
+     *
+     * @param id
+     * @param newName
+     * @param newEmail
+     * @return
+     */
     public boolean updateUser(int id, String newName, String newEmail) {
         User user = getUserById(id);
         if (user != null) {
@@ -54,7 +75,13 @@ public class UserManager {
         return false;
     }
 
-    // Delete
+    /**
+     * Delete a user by their ID.
+     *
+     * @param id
+     * @return
+     */
+
     public boolean deleteUser(int id) {
         User user = getUserById(id);
         if (user != null) {
@@ -63,6 +90,11 @@ public class UserManager {
         return false;
     }
 
+    /**
+     * Get the number of users in the list.
+     *
+     * @return
+     */
     public int size() {
         return users.size();
     }
